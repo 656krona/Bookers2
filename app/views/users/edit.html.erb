@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-xs-12">
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @user.errors.count %>error prohibited this book from being saved:</h2>
+        <ul class="message">
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+      <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-3">
+<!-- ここから貼り付け -->
+      <%= form_for(@user) do |f| %>
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>User info</h2>
+              <div class="form-group">
+                <label class="control-label" for="InputTextarea">Name</label>
+                <%= f.text_field :name, autofocus: true, class:"form-control", id:"InputTextarea" %>
+              </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12" style="height:4em;">
+            <label for="InputFile">Image</label>
+            <%= f.attachment_field :profile_image %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label class="control-label" for="InputTextarea">Introduction</label>
+                <%= f.text_field :introduction, autofocus: true, class:"form-control", id:"InputTextarea", rows:"3" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <%= f.submit("Update User", class: "btn btn-primary btn-block") %>
+          </div>
+        </div>
+      <% end %>
+<!-- ここまで -->
+  </div>
+  <div class="col-xs-9">
+  </div>
+</div>

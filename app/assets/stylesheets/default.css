@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-text-size-adjust:100%;
+  margin:0;
+  padding:70px 0 0 0;
+  background-color:#fff;
+  color:#333;/*色薄め、限界の薄さ。2、3をよく使用する。*/
+  font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+/* layouts/application.html.erb */
+
+.flash {
+  color: green;
+  font-size: 14px;
+}
+
+/* layouts/home.html.erb */
+h1 {
+  display: inline-block;
+}
+
+/* エラー文言 */
+#error_explanation h2 {
+  margin: 0;
+  padding: 5px;
+  font-size: 25px;
+  color: red;
+}
+#error_explanation > .message {
+  margin: 10px 30px;
+  color: red;
+}
+
+/* books/edit.html.erb */
+
+.menu {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #222;
+}

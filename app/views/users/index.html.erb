@@ -1,0 +1,34 @@
+<%= render 'users/common', user: @user, book: @book %>
+
+    <div class="col-xs-9">
+      <h2 class="list-title">Users</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td>
+             <%= attachment_image_tag user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "img-rounded pull-left profile-img", fallback: "no_image.jpg", :size =>'50x50' %>
+            </td>
+            <td>
+              <%= user.name %>
+            </td>
+            <td>
+              <%= link_to "Show", user_path(user.id), class: "pull-right" %>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
